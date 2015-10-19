@@ -14,7 +14,7 @@ defmodule Journalx do
     import Supervisor.Spec, warn: false
 
     children = [
-      worker(GenEvent, [], [name: Journalx.GenEvent]),
+      worker(GenEvent, [[name: Journalx.GenEvent]], []),
       worker(Journalx.Listener, []),
     ]
 
